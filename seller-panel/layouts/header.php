@@ -37,13 +37,13 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo SELLERURL;?>/sellers/orders.html" style="margin-left: 20px;">Orders</a>
+            <a class="nav-link" href="<?php echo SELLERURL;?>/sellers/orders.php" style="margin-left: 20px;">Orders</a>
           </li>
           <!-- <li class="nav-item">
             <a class="nav-link" href="/categories-admins/show-categories.html" style="margin-left: 20px;">Categories</a>
           </li> -->
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo SELLERURL;?>/products-sellers/show-products.html" style="margin-left: 20px;">Products</a>
+            <a class="nav-link" href="<?php echo SELLERURL;?>/products-sellers/show-products.php" style="margin-left: 20px;">Products</a>
           </li>        
         </ul>
         <?php endif; ?>

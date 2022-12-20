@@ -1,5 +1,29 @@
 <?php require "layouts/header.php";?>
 <?php require "../includes/dbconfig.php"?>
+
+<?php 
+
+    $products = "SELECT COUNT(*) as products_num FROM products";
+    $productsQuery = mysqli_query($conn,$products);
+    $allproducts = mysqli_fetch_assoc($productsQuery);
+
+
+    $categories = "SELECT COUNT(*) as cat_num FROM categories";
+    $catQuery = mysqli_query($conn,$categories);
+    $allcategories = mysqli_fetch_assoc($catQuery);
+
+
+    $users = "SELECT COUNT(*) as user_num FROM users";
+    $userQuery = mysqli_query($conn,$users);
+    $allusers = mysqli_fetch_assoc($userQuery);
+
+?>
+            
+      <?php if(isset($_SESSION['username'])) :?>
+          <div class="alert alert-success" role="alert">
+            Hello, <?php echo $_SESSION['username'];?> Welcome Back, glad to have you back. <i class="fa-regular fa-face-smile"></i>
+          </div>
+      <?php endif;?>
             
       <div class="row">
         <div class="col-md-4">

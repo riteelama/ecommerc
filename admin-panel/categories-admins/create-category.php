@@ -9,7 +9,7 @@
     
       if(empty($category_name))
       {
-          $error = "Category name or image cannot be empty";
+          $error = "Category name cannot be empty";
       } else 
       {
 

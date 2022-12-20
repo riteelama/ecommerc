@@ -67,7 +67,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="images p-3">
-                            <div class="text-center p-4"> <img id="main-image" src="../images/<?php echo $product['image'];?>" width="100%" height="auto" /> </div>
+                            <div class="text-center p-4"> <img id="main-image" src="http://localhost/ecommerce/seller-panel//images/<?php echo $product['image'];?>" width="100%" height="auto" /> </div>
                         </div>
                     </div>
                     <div class="col-md-6">

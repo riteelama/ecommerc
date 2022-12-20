@@ -71,7 +71,7 @@ if(isset($_POST['submit'])){
                       <tr class="mb-4">
                         <th scope="row"><?php echo $product['id'];?></th>
                         <td><img width="100" height="100"
-                        src="../images/<?php echo $product['prod_image'];?>"
+                        src="http://localhost/ecommerce/admin-panel/categories-admins/images/<?php echo $product['prod_image'];?>"
                         class="img-fluid rounded-3" alt="Cotton T-shirt">
                         </td>
                         <td><?php echo $product['prod_name'];?></td>
