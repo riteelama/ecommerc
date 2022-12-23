@@ -36,7 +36,6 @@
 
         $dirname = "../images/" . basename($image);
         echo $dirname;
-
         $insert = "INSERT INTO products (product_name, image, price, description, excerpt, user_id, category_id) VALUES ('$product_name', '$image', '$price', '$description', '$excerpt', '$user_id', '$category_id')";
         var_dump($insert);
         // $insert = "INSERT INTO products (product_name, price,description, image, user_id, category_id) VALUES ('$product_name','$price','$description','$image','$user_id', '$category_id')";

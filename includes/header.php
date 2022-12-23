@@ -7,6 +7,7 @@
     if(isset($_SESSION['username'])){
         $username = $_SESSION['username'];
         $userFindSql = "SELECT * FROM users WHERE username = '$username'";
+        // var_dump($userFindSql);
         $userFindQuery = mysqli_query($conn,$userFindSql);
         $userFindRow = mysqli_fetch_assoc($userFindQuery);
         $user_id = $userFindRow['id'];
@@ -30,6 +31,8 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- <link href="../assets/fontawesome.min.css" rel="stylesheet"> -->
+    <script></script>
     <script src="https://kit.fontawesome.com/5c5946fe44.js" crossorigin="anonymous"></script>
     <title>Ecommerce</title>
   </head>
@@ -67,9 +70,7 @@
                <?php echo $_SESSION['username'];?>
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider"></li>
+                
                 <li><a class="dropdown-item" href="<?php echo APPURL;?>/auth/logout.php">Logout</a></li>
             </ul>
             </li>

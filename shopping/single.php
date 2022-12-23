@@ -77,7 +77,7 @@
                             </div>
                             <div class="mt-4 mb-3"> 
                                 <h5 class="text-uppercase"><?php echo $product['product_name'];?></h5><span><a href="<?php echo APPURL;?>/categories/single-category.php?id=<?php echo $catRows['id']?>"><?php echo $cat_name;?></a>
-                                    <div class="price d-flex flex-row align-items-center"> <span class="act-price">$<?php echo $product['price'];?></span>
+                                    <div class="price d-flex flex-row align-items-center"> <span class="act-price"><?php echo $product['price'];?></span>
                                 </div>
                             </div>
                             

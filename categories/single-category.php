@@ -23,7 +23,8 @@
                     <img height="213px" class="card-img-top" src="http://localhost/ecommerce/admin-panel/categories-admins/images/<?php echo $row['image'];?>">
                     <div class="card-body" >
                         <h5 class="d-inline"><b><?php echo $row['product_name'];?></b> </h5>
-                        <h5 class="d-inline"><div class="text-muted d-inline">($<?php echo $row['price'];?>/item)</div></h5>
+                        <br>
+                        <h5 class="d-inline"><div class="text-muted d-inline"><?php echo $row['price'];?></div></h5>
                         <p><?php echo $row['excerpt'];?></p>
                          <a href="<?php echo APPURL;?>/shopping/single.php?id=<?php echo $row['id']?>"  class="btn btn-primary w-100 rounded my-2"> View Details<i class="fas fa-arrow-right"></i> </a>      
      

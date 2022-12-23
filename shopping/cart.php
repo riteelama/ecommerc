@@ -19,11 +19,16 @@ $users = mysqli_fetch_assoc($userQuery);
 $user_id = $users['id'];
 
 $products = "SELECT * FROM cart WHERE user_id = '$user_id'";
+// var_dump($products);
 
 $productsQuery = mysqli_query($conn,$products);
 
+// $productValue = mysqli_fetch_assoc($productsQuery);
+// $prod_id = $productValue['prod_id'];
+// var_dump($prod_id);
+
 $allProducts = mysqli_fetch_all($productsQuery,MYSQLI_ASSOC);
-// var_dump($allProducts);
+// var_dump($allProducts['prod_id']);
 
 if(isset($_POST['submit'])){
   
@@ -64,6 +69,8 @@ if(isset($_POST['submit'])){
                     <tbody>
                         <?php 
                         if(count($allProducts) > 0) : ?>
+                         <input class="prod_id" value="<?php 
+                        //  var_dump($allProducts['prod_id']);?>" type="hidden">
                          <?php 
                          foreach($allProducts as $product) :
                         ?>
@@ -80,7 +87,8 @@ if(isset($_POST['submit'])){
                           <input id="form1" min="1" name="quantity" value="<?php echo $product['prod_quantity'];?>" type="number"
                           class="form-control form-control-sm pro_amount" />
                         </td>
-                        <td class="total_price"><?php echo "$ " ;?><?php echo $product['prod_price'] * $product['prod_quantity'];?></td>
+                        <td class="total_price"><?php echo "$ " ;?><span><?php echo $product['prod_price'] * $product['prod_quantity'];?></span></td>
+                       <input type="text" class="prod_id" value="<?php  echo $product['prod_id'];?>">
                         <td><button value="<?php echo $product['id'];?>" class="btn btn-warning text-white btn-update"><i class="fas fa-pen"></i> </button></td>
                         <td><button value="<?php echo $product['id'];?>" class="btn btn-danger text-white btn-delete"><i class="fas fa-trash-alt"></i> </button></td>
                       </tr>
@@ -164,6 +172,15 @@ if(isset($_POST['submit'])){
 
 
            fetch();        
+      });
+
+      $(".checkout").on('click', function(e) {
+        var total_price = $('.total_price').find('span').html();
+        localStorage.setItem("totalPrice",total_price);
+        var prod_id =  $('.prod_id').val();
+        localStorage.setItem("prodId",prod_id);
+        // alert(total_price);
+
       });
 
       $(".btn-delete").on('click', function(e) {

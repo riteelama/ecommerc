@@ -32,13 +32,15 @@
       <?php if(isset($_SESSION['username'])):?>
         <ul class="navbar-nav side-nav" >
           <li class="nav-item">
-            <a class="nav-link text-white" style="margin-left: 20px;" href="<?php echo SELLERURL;?>">Home
+            <a class="nav-link" style="margin-left: 20px;" href="<?php echo SELLERURL;?>">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?php echo SELLERURL;?>/sellers/orders.php" style="margin-left: 20px;">Orders</a>
-          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href=
+            "<?php 
+            // echo SELLERURL;?>/sellers/orders.php" style="margin-left: 20px;">Orders</a>
+          </li> -->
           <!-- <li class="nav-item">
             <a class="nav-link" href="/categories-admins/show-categories.html" style="margin-left: 20px;">Categories</a>
           </li> -->

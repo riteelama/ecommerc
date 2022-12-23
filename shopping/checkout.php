@@ -1,24 +1,31 @@
 <?php require "../includes/header.php"?> 
-<?php require "../includes/dbconfig.php"?> 
+<?php require "../includes/dbconfig.php"?>
+
       <!-- Heading -->
       <?php
-        /* at the top of 'check.php' */
-        // if($_SERVER['REQUEST_METHOD']=='GET' && realpath(__FILE__) == realpath( $_SERVER['SCRIPT_FILENAME'] ) ) {
-        //     /* 
-        //       Up to you which header to send, some prefer 404 even if 
-        //       the files does exist for security
-        //     */
-        //     header( 'HTTP/1.0 403 Forbidden', TRUE, 403 );
+        $user_id = $userFindRow['id'];
+      
+        $cartFindSql = "SELECT * FROM cart WHERE user_id = '$user_id'";
+        // var_dump($cartFindSql);
+        $cartFindQuery = mysqli_query($conn,$cartFindSql);
+        $userCart = mysqli_fetch_assoc($cartFindQuery);
 
-        //     /* choose the appropriate page to redirect users */
-        //     die( header( 'location: '.APPURL.'' ) );
+        $prod_id = $userCart['prod_id'];
+        // var_dump($prod_id);
+        $userProd = "SELECT * FROM products WHERE id = '$prod_id'";
+        // var_dump($userProd);
+        $userProdQuery = mysqli_query($conn,$userProd);
+        $prod = mysqli_fetch_assoc($userProdQuery);
 
-        // }
 
         if(!isset($_SESSION['username']))
         { 
             header("location: ".APPURL."");
         }
+
+        
+        
+        // var_dump($sql);
       ?>
       <h2 class="my-5 h2 text-center">Checkout</h2>
 
@@ -92,17 +99,34 @@
               <!-- <button name= "submit" class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button> -->
               <script
                 src="https://checkout.stripe.com/checkout.js"
-                class="stripe-button"
+                class="stripe-button btn-lg"
                 data-key="pk_test_51MDqIkEQVwxKPes2txjV1nvHbCaW7cIkrW8Kzx0BV1JYZn3yL4GmyBH1uEyCutv16SCuIFDFZ9PNeuz4zNpxHEsm00bpPTS2zC"
                 data-currency="usd"
-                data-label="Pay Now">
+                data-label="Pay Now using stripe">
               </script>
+            </form>
+
+            <form class="card-body" action="https://uat.esewa.com.np/epay/main" method="POST">
+              <input value="" name="tAmt" type="hidden" class="total_price_final">
+              <input value="" name="amt" type="hidden" class="total_price_final">
+              <input value="0" name="txAmt" type="hidden">
+              <input value="0" name="psc" type="hidden">
+              <input value="0" name="pdc" type="hidden">
+              <input value="NP-ES-COLLEGE-TEST" name="scd" type="hidden">
+              <input value="<?php echo $prod['id'];?>" name="pid" type="hidden">
+              <input value="http://localhost/ecommerce/after-payment-esewa.php" type="hidden" name="su">
+              <input value="http://localhost/ecommerce/404.php" type="hidden" name="fu">
+              <input class="btn btn-success btn-lg" value="Pay with e-Sewa" type="submit" name="submit">
+            </form>
+
+              
 
             </form>
+              
 
           </div>
          
         </div>
     </div>
 
-<?php require "../includes/footer.php";?> 
+<?php require "../includes/footer.php";?>
