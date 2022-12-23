@@ -88,7 +88,7 @@ if(isset($_POST['submit'])){
                           class="form-control form-control-sm pro_amount" />
                         </td>
                         <td class="total_price"><?php echo "$ " ;?><span><?php echo $product['prod_price'] * $product['prod_quantity'];?></span></td>
-                       <input type="text" class="prod_id" value="<?php  echo $product['prod_id'];?>">
+                       <input type="hidden" class="prod_id" value="<?php  echo $product['prod_id'];?>">
                         <td><button value="<?php echo $product['id'];?>" class="btn btn-warning text-white btn-update"><i class="fas fa-pen"></i> </button></td>
                         <td><button value="<?php echo $product['id'];?>" class="btn btn-danger text-white btn-delete"><i class="fas fa-trash-alt"></i> </button></td>
                       </tr>
@@ -119,7 +119,7 @@ if(isset($_POST['submit'])){
                   </div>
 
                   <button type="submit" name="submit"class="btn btn-dark btn-block btn-lg checkout"
-                    data-mdb-ripple-color="dark">Checkout</button>
+                    data-mdb-ripple-color="dark">Checkout with e-sewa</button>
                   </form>
 
                 </div>

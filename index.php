@@ -16,7 +16,7 @@
                 <div class="card mb-5">
                     <img height="213px" class="card-img-top" src="http://localhost/ecommerce/seller-panel/images/<?php echo $row['image'];?>">
                     <div class="card-body" >
-                        <h5 class="d-inline">Name: <b><?php echo $row['product_name'];?></b> </h5>
+                        <h5 class="d-inline"><b><?php echo $row['product_name'];?></b> </h5>
                         <br>
                         <h5 class="d-inline">Price: <div class="text-warning d-inline"><?php echo $row['price'];?></div></h5>
                         <p><?php echo $row['excerpt'];?></p>

@@ -1,10 +1,10 @@
-<?php require "../layouts/header.php"?> 
-<?php require "../../includes/dbconfig.php"?> 
+<?php require "layouts/header.php"?> 
+<?php require "../includes/dbconfig.php"?> 
 
 <?php 
 if(!isset($_SESSION['username']))
 { 
-    header("location: ".SELLERURL."");
+    header("location: ".ADMINURL."");
 }
 
 ?>
@@ -24,7 +24,7 @@ if(!isset($_SESSION['username']))
       $user_id = $users['id'];
       // var_dump($user_id);
 
-      $selectSql = "SELECT * FROM products WHERE user_id = '$user_id'";
+      $selectSql = "SELECT * FROM products";
       // var_dump($selectSql);
       $selectQuery = mysqli_query($conn,$selectSql);
       // $row = mysqli_fetch_assoc($result);
@@ -54,7 +54,6 @@ if(!isset($_SESSION['username']))
                     <th scope="col">Image</th>
                     <th scope="col">status</th>
                     <th scope="col">delete</th>
-                    <th scope="col">update</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -65,12 +64,11 @@ if(!isset($_SESSION['username']))
                     <td><?php echo "$".$product['price'];?></td>
                     <td><?php echo $product['image'];?></td>
                     <?php if($product['status'] > 0) :?>
-                     <td><a href="<?php echo SELLERURL;?>/products-sellers/status.php?id=<?php echo $product['id'];?>&status=<?php echo $product['status'];?>" class="btn btn-success  text-center ">Active</a></td>
+                     <td><a href="<?php echo SELLERURL;?>/products-sellers/status.php?id=<?php echo $product['id'];?>&status=<?php echo $product['status'];?>" class="btn btn-success  text-center ">verfied</a></td>
                      <?php else : ?>
-                    <td><a href="<?php echo SELLERURL;?>/products-sellers/status.php?id=<?php echo $product['id'];?>&status=<?php echo $product['status'];?>" class="btn btn-danger  text-center ">In Active</a></td>
+                    <td><a href="<?php echo SELLERURL;?>/products-sellers/status.php?id=<?php echo $product['id'];?>&status=<?php echo $product['status'];?>" class="btn btn-danger  text-center ">Un-verfied</a></td>
                     <?php endif; ?>
                     <td><a href="<?php echo SELLERURL;?>/products-sellers/delete-products.php?id=<?php echo $product['id'];?>" class="btn btn-danger  text-center ">delete</a></td>
-                    <td><a href="<?php echo SELLERURL;?>/products-sellers/update-products.php?id=<?php echo $product['id'];?>" class="btn btn-warning  text-center text-white">Update</a></td>
                       
                   
                   </tr>

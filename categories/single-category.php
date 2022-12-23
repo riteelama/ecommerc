@@ -20,7 +20,7 @@
             ?>
             <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1">
                 <div class="card" >
-                    <img height="213px" class="card-img-top" src="http://localhost/ecommerce/admin-panel/categories-admins/images/<?php echo $row['image'];?>">
+                    <img height="213px" class="card-img-top" src="http://localhost/ecommerce/seller-panel/images/<?php echo $row['image'];?>">
                     <div class="card-body" >
                         <h5 class="d-inline"><b><?php echo $row['product_name'];?></b> </h5>
                         <br>

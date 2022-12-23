@@ -13,11 +13,15 @@
     <!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
     <title>Admin Panel</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="http://localhost/ecommerce/admin-panel/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" rel="stylesheet">
      <link href="<?php echo ADMINURL;?>/styles/style.css" rel="stylesheet">
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="ttp://localhost/ecommerce/admin-panel/bootstrap.min.css"></script>
+    <script src = "http://localhost/ecommerce/admin-panel/bootstrap.min.js"></script>
+    <!-- <script src="http://localhost/ecommerce/admin-panel/jquery-1.11.1.js"></script> -->
+    <!-- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
 </head>
 <body>
 <div id="wrapper">
@@ -44,7 +48,7 @@
             <a class="nav-link" href="<?php echo ADMINURL;?>/categories-admins/show-categories.php" style="margin-left: 20px;">Categories</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo ADMINURL;?>/products-admins/show-products.php" style="margin-left: 20px;">Products</a>
+            <a class="nav-link" href="<?php echo ADMINURL;?>/products-admin/show-products.php" style="margin-left: 20px;">Products</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?php echo ADMINURL;?>/order/show-orders.php" style="margin-left: 20px;">Orders</a>
