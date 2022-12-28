@@ -6,14 +6,15 @@
     if(isset($_GET['id'])) {
         $id = $_GET['id'];
 
-        $select = "SELECT * FROM orders WHERE id = '$id'";
+        $select = "SELECT * FROM `esewa-order` WHERE id = '$id'";
+        // var_dump($select);
         $selectQuery = mysqli_query($conn,$select);
 
-        $images = mysqli_fetch_assoc($selectQuery);
+        // $images = mysqli_fetch_assoc($selectQuery);
 
         // unlink("images/".$images['image']."");
 
-        $delete = "DELETE FROM orders WHERE id = '$id'";
+        $delete = "DELETE FROM `esewa-order` WHERE id = '$id'";
         // var_dump($delete);
         $deleteQuery = mysqli_query($conn,$delete);
 

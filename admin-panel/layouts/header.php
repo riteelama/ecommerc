@@ -48,7 +48,8 @@
             <a class="nav-link" href="<?php echo ADMINURL;?>/categories-admins/show-categories.php" style="margin-left: 20px;">Categories</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo ADMINURL;?>/products-admin/show-products.php" style="margin-left: 20px;">Products</a>
+          <!-- http://localhost/ecommerce/admin-panel/products-admins/show-products.php -->
+            <a class="nav-link" href="<?php echo ADMINURL;?>/products-admins/show-products.php" style="margin-left: 20px;">Products</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?php echo ADMINURL;?>/order/show-orders.php" style="margin-left: 20px;">Orders</a>

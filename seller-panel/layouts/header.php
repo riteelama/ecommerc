@@ -46,7 +46,10 @@
           </li> -->
           <li class="nav-item">
             <a class="nav-link" href="<?php echo SELLERURL;?>/products-sellers/show-products.php" style="margin-left: 20px;">Products</a>
-          </li>        
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo SELLERURL;?>/order/show-orders.php" style="margin-left: 20px;">Orders</a>
+          </li>         
         </ul>
         <?php endif; ?>
 

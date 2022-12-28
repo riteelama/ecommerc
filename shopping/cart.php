@@ -28,7 +28,7 @@ $productsQuery = mysqli_query($conn,$products);
 // var_dump($prod_id);
 
 $allProducts = mysqli_fetch_all($productsQuery,MYSQLI_ASSOC);
-// var_dump($allProducts['prod_id']);
+//  var_dump($allProducts[0]['prod_id']);
 
 if(isset($_POST['submit'])){
   
@@ -69,8 +69,7 @@ if(isset($_POST['submit'])){
                     <tbody>
                         <?php 
                         if(count($allProducts) > 0) : ?>
-                         <input class="prod_id" value="<?php 
-                        //  var_dump($allProducts['prod_id']);?>" type="hidden">
+                         <input id="prod_id" value="<?php echo $allProducts[0]['prod_id'];?>" type="hidden">
                          <?php 
                          foreach($allProducts as $product) :
                         ?>
@@ -78,7 +77,7 @@ if(isset($_POST['submit'])){
                       <tr class="mb-4">
                         <th scope="row"><?php echo $product['id'];?></th>
                         <td><img width="100" height="100"
-                        src="http://localhost/ecommerce/admin-panel/categories-admins/images/<?php echo $product['prod_image'];?>"
+                        src="http://localhost/ecommerce/seller-panel/images/<?php echo $product['prod_image'];?>"
                         class="img-fluid rounded-3" alt="Cotton T-shirt">
                         </td>
                         <td><?php echo $product['prod_name'];?></td>
@@ -88,7 +87,7 @@ if(isset($_POST['submit'])){
                           class="form-control form-control-sm pro_amount" />
                         </td>
                         <td class="total_price"><?php echo "$ " ;?><span><?php echo $product['prod_price'] * $product['prod_quantity'];?></span></td>
-                       <input type="hidden" class="prod_id" value="<?php  echo $product['prod_id'];?>">
+
                         <td><button value="<?php echo $product['id'];?>" class="btn btn-warning text-white btn-update"><i class="fas fa-pen"></i> </button></td>
                         <td><button value="<?php echo $product['id'];?>" class="btn btn-danger text-white btn-delete"><i class="fas fa-trash-alt"></i> </button></td>
                       </tr>
@@ -177,8 +176,9 @@ if(isset($_POST['submit'])){
       $(".checkout").on('click', function(e) {
         var total_price = $('.total_price').find('span').html();
         localStorage.setItem("totalPrice",total_price);
-        var prod_id =  $('.prod_id').val();
-        localStorage.setItem("prodId",prod_id);
+        var prod_id =  $('#prod_id').val();
+        alert(prod_id);
+        localStorage.setItem("prodIda",prod_id);
         // alert(total_price);
 
       });

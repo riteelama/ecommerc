@@ -47,19 +47,12 @@
               <input value="0" name="psc" type="hidden">
               <input value="0" name="pdc" type="hidden">
               <input value="NP-ES-COLLEGE-TEST" name="scd" type="hidden">
-              <input value="<?php echo $prod['id'];?>" name="pid" type="hidden">
+              <input value="<?php echo $prod['id'];?>" name="pid" type="text">
               <input value="http://localhost/ecommerce/after-payment-esewa.php" type="hidden" name="su">
               <input value="http://localhost/ecommerce/404.php" type="hidden" name="fu">
               <input class="btn btn-success btn-lg" value="Pay with e-Sewa" type="submit" name="submit">
-            </form>
-
-              
-
-
-              
-
-          </div>
-         
+            </form>      
+          </div>         
         </div>
     </div>
 

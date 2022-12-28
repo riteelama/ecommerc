@@ -14,6 +14,7 @@ if(isset($_SESSION['username'])){
 
 
    $prod_id = $_COOKIE["productId"];
+    // $prod_id = $_POST['prod_id'];
    $totalAmount = $_COOKIE["totalPrice"];
 
   $insertOrder = "INSERT INTO `esewa-order` (`username`, `total_amount`, `prod_id`, `user_id`) VALUES ('$username', '$totalAmount', '$prod_id', '$user_id');";
@@ -53,13 +54,16 @@ $deleteQuery = mysqli_query($conn,$delete);
 
 <script>
 
-var prod_id = localStorage.getItem("prodId");
+var prod_id = localStorage.getItem("prodIda");
+// console.log(prod_id);
 var d = new Date();
 d.setTime(d.getTime()+(1*24*60*60*1000));
 var expires = "expires="+ d.toUTCString();
 document.cookie = "productId" + "=" + prod_id + ";" + "expires";
 
 var total_amount = localStorage.getItem("totalPrice");
+// console.log(total_amount);
+// console.log(total_amount);
 var d = new Date();
 d.setTime(d.getTime()+(1*24*60*60*1000));
 var expires = "expires="+ d.toUTCString();

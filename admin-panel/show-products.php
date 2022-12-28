@@ -25,7 +25,7 @@ if(!isset($_SESSION['username']))
       // var_dump($user_id);
 
       $selectSql = "SELECT * FROM products";
-      // var_dump($selectSql);
+      var_dump($selectSql);
       $selectQuery = mysqli_query($conn,$selectSql);
       // $row = mysqli_fetch_assoc($result);
       // var_dump($selectQuery);

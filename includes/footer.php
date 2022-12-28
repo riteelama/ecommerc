@@ -18,7 +18,9 @@
 <script>
   jQuery(document).ready(function($){
     $(".total_price_final").val(parseFloat(localStorage.getItem("totalPrice")));
-    // $(".prod_id").val(parseFloat(localStorage.getItem("prodId")));
+    // $("#prod_id").val(localStorage.getItem("prodIda"));
+    $("#prod_id2").val(localStorage.getItem("prodIda"));
+    // console.log($(".prod_id").val(parseFloat(localStorage.getItem("prodId"))));
   });
 </script>
  </body>
